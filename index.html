@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yago - Challenge : Bonus-Malus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="author" content="Hamza Echamlali">
+    <meta name="contact" content="echamlali.hamza@gmail.com">
+    <!-- This project is part of a challenge submitted by the company Yago to Hamza Echamlali during a technical test. -->
+</head>
+<body class="bg-black " style="background-image: url('https://hubsfera.com/wp-content/uploads/bg-footer.svg'); background-position: center; background-size:auto; background-repeat: no-repeat; background-attachment: fixed; overflow: hidden;">
+
+    <!--  Container app -->
+    <div class="flex flex-col gap-5 h-screen w-screen items-center justify-between ">
+
+        <h2 class="text-6xl text-white pb-4 pt-6 font-sans font-light">Find your <span class="italic">Bonus-Malus</span> score</h2>
+
+        <!--  Container form -->
+        <div class="flex flex-wrap">
+
+            <!--  Container form -->
+            <div class="px-14 pb-8 pt-7 rounded-lg inline-block border-white border" style="width: 550px;">
+                <div class="italic mb-4 text-white">Please fill out the form to calculate your bonus-malus score.</div>
+
+                <!--  Bonus-Malus form -->
+                <form id="bonusMalusForm" class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-2">
+                        <label class="block uppercase tracking-wide text-white text-xs font-bold "  for="firstName">First Name</label>
+                        <input class="appearance-none block w-full bg-gray-100  border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" placeholder="Hamza" type="text" id="firstName" name="firstName" required >
+                    </div>
+                    <div class="flex flex-col gap-2" >
+                        <label class="block uppercase tracking-wide text-white text-xs font-bold " for="lastName">Last Name</label>
+                        <input class="appearance-none block w-full bg-gray-100 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" id="lastName" name="lastName" required placeholder="Echamlali">
+                    </div>
+                    <div class="flex flex-col gap-2" >
+                        <label class="block uppercase tracking-wide text-white text-xs font-bold " for="age">Age</label>
+                        <input class="appearance-none block w-full bg-gray-100 border rounded py-3 px-4 mb-3 focus:outline-none focus:bg-white"  type="number" id="age" name="age" required min="18" max="80" placeholder="29">
+                    </div>
+                    <div class="flex flex-col gap-2" >
+                        <label  class="block uppercase tracking-wide text-white text-xs font-bold"  for="drivingYears">Amount of Driving Years</label>
+                        <input class="appearance-none block w-full bg-gray-100 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="number" id="drivingYears" name="drivingYears" required min="0" placeholder="0">
+                    </div>
+                    <div class="flex flex-col gap-2" >
+                        <label  class="block uppercase tracking-wide text-white text-xs font-bold "  for="accidentsAtFault">Amount of Accidents At Fault(during the last five years)</label>
+                        <input class="appearance-none block w-full bg-gray-100 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  type="number" id="accidentsAtFault" name="accidentsAtFault" required min="0" max="2" placeholder="0">
+                    </div>
+                    <div class="flex flex-col gap-2" >
+                        <label class="block uppercase tracking-wide text-white text-xs font-bold "  for="usage">Usage</label>
+                        <select class="py-3 bg-gray-100 pe-9 block w-full border-blue-600 rounded text-sm focus:border-blue-500 focus:ring-blue-500 "id="usage" name="usage" required>
+                            <option value="1">Private</option>
+                            <option value="0">Professional</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button class="mt-2 flex-shrink-0 bg-blue-800 text-white hover:bg-blue-900 border-blue-800 hover:border-bg-blue-900 text-sm border-4 py-1 px-2 rounded " type="submit">Calculate Bonus-Malus</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Bonus-malus score -->
+            <div id="result" class="text-white" style="width: 0px; transition: width .5s ease-in-out"></div>
+        </div>
+    </div>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
